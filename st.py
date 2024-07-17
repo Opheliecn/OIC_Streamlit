@@ -30,7 +30,7 @@ if uploaded_image:
     image = Image.open(uploaded_image) 
     st.image(image, width=350) # Affichage de l'image choisie
 
-    exif_data = piexif.load(image.info.get('exif', b'')) # Récupéartion des données EXIF sous forme de dictionnaire
+    exif_data = piexif.load(image.info.get('exif', b'')) # Récupération des données EXIF sous forme de dictionnaire
 
     # Afficher les métadonnées actuelles
     st.subheader("Métadonnées EXIF actuelles :")
@@ -108,10 +108,12 @@ if uploaded_image:
         {"Ville": "Munich, Allemagne", "lat": 48.13799, "lon": 11.57518}
     ]
     
+    # Carte des endroits visités
     m2 = folium.Map(location=[0, 0], zoom_start=2)
     for city in cities:
         folium.Marker([city["lat"], city["lon"]], tooltip=city["Ville"], icon=folium.Icon(icon='plane', color='#ea698b')).add_to(m2)
         
+    # Liaison de ces endroits entre eux
     for i in range(len(cities) - 1):
         city1 = cities[i]
         city2 = cities[i + 1]
