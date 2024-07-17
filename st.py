@@ -1,3 +1,15 @@
+# *****************************************************
+# Nom: ......... : st.py
+# Rôle:......... : Application Streamlit de modification des métadonnées EXIF
+# Auteur:....... : Ophélie CUNY
+# Version:...... : V0.1 du 17/06/2024
+# Licence:...... : réalisé dans le cadre du cours d'Outils Informatiques Collaboratifs
+# Dépendances... : Nécessite l'installation de bibliothèques externes :
+#                       pip install folium piexif streamlit pillow streamlit_foliumm
+#
+# Usage:........ : Éxecution : streamlit run st.py 
+# *****************************************************
+
 import folium
 import piexif
 from PIL import Image
